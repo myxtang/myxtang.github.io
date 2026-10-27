@@ -1,9 +1,21 @@
-"AJP":
-  url: https://aapt.scitation.org/journal/ajp
-  color: "#00369f"
+# Colors for the venue badges on the publications page.
+# The key must match the `abbr` field of an entry in _bibliography/papers.bib.
+# You can also add `url:` to make a badge link to the venue's website.
 
-"PhysRev":
-  url: https://journals.aps.org/
+"TAC":
+  color: "#00629B"
 
-"Vision":
-  color: "#009f36"
+"L-CSS":
+  color: "#00629B"
+
+"CDC":
+  color: "#2a7f62"
+
+"ACC":
+  color: "#2a7f62"
+
+"L4DC":
+  color: "#2a7f62"
+
+"GameNets":
+  color: "#2a7f62"

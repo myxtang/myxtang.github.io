@@ -2,16 +2,16 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
+subtitle: Ph.D. Student · <a href='https://www.ece.ucsd.edu/'>Electrical and Computer Engineering</a> · UC San Diego
 
 profile:
   align: right
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
+    <p>Electrical and Computer Engineering</p>
+    <p>University of California, San Diego</p>
+    <p>La Jolla, CA</p>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
@@ -22,13 +22,11 @@ announcements:
   limit: 5 # leave blank to include all the news in the `_news` folder
 
 latest_posts:
-  enabled: true
-  scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
-  limit: 3 # leave blank to include all the blog posts
+  enabled: false
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](https://www.reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+I am a Ph.D. student in Electrical and Computer Engineering at UC San Diego, advised by [Jorge Poveda](https://poveda.ucsd.edu/), and I also work closely with [Miroslav Krstic](https://flyingv.ucsd.edu/). My research interests are in **control**, **optimization**, **game theory**, **dynamical systems**, and **transportation theory**. I am supported by an [NSF Graduate Research Fellowship](https://www.nsfgrfp.org/).
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+My recent work studies fixed-time stability and input-to-state stability, including small-gain theorems, singularly perturbed systems, and hybrid dynamical systems; extremum seeking and Nash equilibrium seeking; and deception in multi-agent learning and games.
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+I received my B.S. degrees in Electrical Engineering and Applied Mathematics from UC San Diego in 2023, and my M.S. in 2025. In summer 2026, I was a Graduate Student Researcher at the Air Force Research Laboratory.
