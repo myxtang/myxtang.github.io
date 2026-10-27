@@ -63,27 +63,6 @@ cv:
           - "UC San Diego"
         date: "2023"
 
-    Travel Support:
-      - bullet: "**2026** · Student Travel Grant, American Control Conference"
-      - bullet: "**2025** · Student Travel and Workshop Support Award, IEEE Conference on Decision and Control"
-      - bullet: "**2024** · Student Travel and Workshop Support Award, IEEE Conference on Decision and Control"
-      - bullet: "**2024** · Student Travel Grant, American Control Conference"
-
-    Invited Talks:
-      - bullet: '**05/2025** · "Fixed-Time ISS in Singular Perturbations," UNAM Variable Structure Systems Seminar'
-      - bullet: '**03/2024** · "Deceptive Nash Equilibrium Seeking," UCSD Control and Optimization Seminar'
-
-    Conference and Workshop Presentations:
-      - bullet: '**05/2026** · "A Lyapunov-Based Small-Gain Theorem for Fixed-Time Stability," American Control Conference, New Orleans, Louisiana'
-      - bullet: '**05/2026** · "Stochastic Deception in Noncooperative Games," Tutorial Session (Co-chair), American Control Conference, New Orleans, Louisiana'
-      - bullet: '**12/2025** · "On Sufficient Lyapunov Conditions for Fixed-Time Stability of Hybrid Dynamical Systems," IEEE Conference on Decision and Control, Rio de Janeiro, Brazil'
-      - bullet: '**06/2025** · "Stochastic Real-Time Deception in Nash Equilibrium Seeking for Games with Quadratic Payoffs" (Poster), 7th Learning for Dynamics and Control Conference, Ann Arbor, Michigan'
-      - bullet: '**04/2025** · "Recent Advances in the Study of Fixed-Time Stability," 45th Southern California Control Workshop, UCSD'
-      - bullet: '**03/2025** · "Deception in Oligopoly Games via Adaptive Nash Seeking Systems," 13th International Conference on Game Theory for Networks, Cambridge, UK'
-      - bullet: '**12/2024** · "Filterless Fixed-Time Extremum Seeking for Scalar Quadratic Maps," IEEE Conference on Decision and Control, Milan, Italy'
-      - bullet: '**07/2024** · "On Fixed-Time Stability for a Class of Singularly Perturbed Systems using Composite Lyapunov Functions," American Control Conference, Denver, Colorado'
-      - bullet: '**08/2021** · "OCT-Angiography Processing for Disease Detection and Classification," UCSD Summer Research Conference'
-
     Teaching:
       - bullet: "**Spring 2026** · Co-lecturer, ECE 272A (Graduate Linear Systems), UCSD"
       - bullet: "**Winter 2026** · Tutor, ECE 285 (Stochastic Hybrid Dynamical Systems), UCSD"
