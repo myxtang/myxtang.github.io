@@ -1,0 +1,85 @@
+---
+layout: clean
+---
+{%- comment -%}
+  Renders _data/cv.yml. Each section is a list of entries; an entry can have:
+  start_date / end_date (e.g. "2023-09", or leave end_date out for "Present"), or date, or when (free text);
+  location; a heading (institution, company or title) with an optional url;
+  a subheading (studyType + area, position, awarder or sub); and highlights (a list of bullet points).
+{%- endcomment -%}
+<main class="wrap page cv-page">
+  <header class="page-head">
+    <h1>{{ page.title }}</h1>
+    {% if page.cv_pdf %}
+      <a
+        class="pdf"
+        {% if page.cv_pdf contains '://' %}
+          href="{{ page.cv_pdf }}"
+        {% else %}
+          href="{{ page.cv_pdf | relative_url }}"
+        {% endif %}
+        target="_blank"
+        rel="noopener noreferrer"
+        >Download PDF ↓</a
+      >
+    {% endif %}
+  </header>
+
+  {% for section in site.data.cv.cv.sections %}
+    <section class="cv-sec">
+      <div class="sec-head">
+        <h2>{{ section[0] }}</h2>
+      </div>
+      {% for e in section[1] %}
+        <div class="cv-row">
+          <div class="when">
+            {%- if e.start_date -%}
+              {% include clean/ym.liquid d=e.start_date %} –
+              {% if e.end_date %}{% include clean/ym.liquid d=e.end_date %}{% else %}Present{% endif %}
+            {%- elsif e.date -%}
+              {% include clean/ym.liquid d=e.date %}
+            {%- elsif e.when -%}
+              {{ e.when }}
+            {%- endif -%}
+            {%- if e.location -%}
+              <span>{{ e.location }}</span>
+            {%- endif -%}
+          </div>
+          <div>
+            {% assign heading = e.institution | default: e.company | default: e.title %}
+            <h3>
+              {% if e.url -%}
+                <a href="{{ e.url }}">{{ heading }}</a>
+              {%- else -%}
+                {{- heading -}}
+              {%- endif %}
+            </h3>
+            {% if e.studyType or e.area %}
+              <div class="sub">
+                {{ e.studyType -}}
+                {%- if e.studyType and e.area %}, {% endif %}
+                {{- e.area }}
+              </div>
+            {% elsif e.position %}
+              <div class="sub">{{ e.position }}</div>
+            {% elsif e.awarder %}
+              <div class="sub">{{ e.awarder }}</div>
+            {% elsif e.sub %}
+              <div class="sub">{{ e.sub }}</div>
+            {% endif %}
+            {% if e.summary %}
+              <p>{{ e.summary | markdownify | remove: '<p>' | remove: '</p>' }}</p>
+            {% endif %}
+            {% if e.highlights.size > 0 %}
+              <ul>
+                {% for h in e.highlights %}
+                  <li>{{ h | markdownify | remove: '<p>' | remove: '</p>' }}</li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </section>
+  {% endfor %}
+</main>

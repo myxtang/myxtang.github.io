@@ -1,33 +1,17 @@
 ---
-layout: about
+layout: clean-home
 title: about
 permalink: /
-subtitle: Ph.D. Student · <a href='https://www.ece.ucsd.edu/'>Electrical and Computer Engineering</a> · UC San Diego
+eyebrow: Ph.D. Student · Electrical and Computer Engineering · UC San Diego # small line under your name
 
 profile:
-  align: right
-  image: prof_pic.jpg
-  image_circular: false # crops the image to make it circular
+  image: prof_pic.jpg # in assets/img/
 
-selected_papers: true # includes a list of papers marked as "selected={true}"
-social: true # includes social icons at the bottom of the page
+selected_papers: true # lists papers marked selected = {true} in _bibliography/papers.bib
 
 announcements:
-  enabled: true # includes a list of news items
-  scrollable: true # adds a vertical scroll bar if there are more than 3 news items
-  limit: 5 # leave blank to include all the news in the `_news` folder
-
-latest_posts:
-  enabled: false
+  enabled: true # shows the newest items from the _news folder
+  limit: 5 # how many to show on this page (all of them are on /news/)
 ---
 
 I am a Ph.D. student in Electrical and Computer Engineering at UC San Diego, advised by [Jorge Poveda](https://poveda.ucsd.edu/), and I also work closely with [Miroslav Krstic](https://flyingv.ucsd.edu/). My research interests are in **control**, **optimization**, **game theory**, **dynamical systems**, and **transportation theory**. I am supported by an [NSF Graduate Research Fellowship](https://www.nsfgrfp.org/). I received my B.S. degrees in Electrical Engineering and Applied Mathematics from UC San Diego in 2023.
-
-<!-- Profile photo width on screens wider than a phone (the theme default is 30%). -->
-<style>
-  @media (min-width: 576px) {
-    .profile {
-      width: 24%;
-    }
-  }
-</style>

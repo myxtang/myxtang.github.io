@@ -1,8 +1,11 @@
+# CV page content (rendered by _layouts/clean-cv.liquid).
+# Sections appear in the order below; rename, reorder or add sections freely.
+# Each entry can use: start_date / end_date ("YYYY-MM"; leave end_date out for "Present"),
+# date ("YYYY" or "YYYY-MM"), or when (any text); location; institution, company or title
+# (the heading) with an optional url; studyType + area, position, awarder or sub (the line
+# under the heading); summary; and highlights (bullet points, Markdown allowed).
 cv:
   name: Michael Yuxiang Tang
-  label: Ph.D. Student, Electrical and Computer Engineering
-  email: myt001@ucsd.edu
-  location: La Jolla, CA
 
   sections:
     Education:
@@ -35,40 +38,36 @@ cv:
     Awards:
       - title: Best Student Paper Award
         awarder: American Control Conference
-        authors:
-          - "American Control Conference"
         date: "2026"
 
       - title: NSF Graduate Research Fellowship
         awarder: National Science Foundation
-        authors:
-          - "National Science Foundation"
         date: "2025"
 
       - title: Best Student Paper Award Finalist
         awarder: American Control Conference
-        authors:
-          - "American Control Conference"
         date: "2024"
 
       - title: ECE Department Fellowship
         awarder: UC San Diego
-        authors:
-          - "UC San Diego"
         date: "2023"
 
       - title: Cum Laude Honors (3.928 GPA)
         awarder: UC San Diego
-        authors:
-          - "UC San Diego"
         date: "2023"
 
     Teaching:
-      - bullet: "**Spring 2026** · Co-lecturer, ECE 272A (Graduate Linear Systems), UCSD"
-      - bullet: "**Winter 2026** · Tutor, ECE 285 (Stochastic Hybrid Dynamical Systems), UCSD"
+      - title: ECE 272A, Graduate Linear Systems
+        sub: Co-lecturer, UC San Diego
+        when: Spring 2026
+
+      - title: ECE 285, Stochastic Hybrid Dynamical Systems
+        sub: Tutor, UC San Diego
+        when: Winter 2026
 
     Academic Service:
-      - label: Conference Reviewer
-        details: American Control Conference; IEEE Conference on Decision and Control; IFAC Conference on Networked Systems
-      - label: Journal Reviewer
-        details: IEEE Transactions on Automatic Control; IEEE Transactions on Control of Network Systems; IEEE Control Systems Letters; Automatica; International Journal of Robust and Nonlinear Control; Nonlinear Analysis Hybrid Systems
+      - title: Conference Reviewer
+        sub: American Control Conference; IEEE Conference on Decision and Control; IFAC Conference on Networked Systems
+
+      - title: Journal Reviewer
+        sub: IEEE Transactions on Automatic Control; IEEE Transactions on Control of Network Systems; IEEE Control Systems Letters; Automatica; International Journal of Robust and Nonlinear Control; Nonlinear Analysis Hybrid Systems

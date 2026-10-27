@@ -1,0 +1,115 @@
+---
+---
+{%- comment -%}
+  One publication on the publications and home pages (jekyll-scholar renders each entry through this
+  layout; see `bibliography_template` in _config.yml). Author matching is adapted from al-folio's bib.liquid.
+{%- endcomment -%}
+<div class="entry" id="{{ entry.key }}">
+  <div class="venue">{{ entry.abbr }}</div>
+  <div>
+    <div class="title">{{ entry.title }}</div>
+
+    <div class="author">
+      {%- for author in entry.author_array -%}
+        {%- assign author_is_self = false -%}
+        {%- assign author_last_name = author.last | regex_replace: '[*∗†‡§¶‖&^]', '' -%}
+        {%- assign author_last_html = author.last | regex_replace: '([*∗†‡§¶‖&^]+)', '<sup>\1</sup>' -%}
+        {%- if site.scholar.last_name contains author_last_name and site.scholar.first_name contains author.first -%}
+          {%- assign author_is_self = true -%}
+        {%- endif -%}
+        {%- assign coauthor_url = null -%}
+        {%- assign clean_last_name = author_last_name | downcase | remove_accents -%}
+        {%- if site.data.coauthors[clean_last_name] -%}
+          {%- for coauthor in site.data.coauthors[clean_last_name] -%}
+            {%- if coauthor.firstname contains author.first -%}
+              {%- assign coauthor_url = coauthor.url -%}
+              {%- break -%}
+            {%- endif -%}
+          {%- endfor -%}
+        {%- endif -%}
+        {%- unless forloop.first -%}
+          {%- if forloop.length > 2 %}, {% else %}  {% endif -%}
+          {%- if forloop.last %}and {% endif -%}
+        {%- endunless -%}
+        {%- if author_is_self -%}
+          <em>
+            {{- author.first }}
+            {{ author_last_html -}}
+          </em>
+        {%- elsif coauthor_url -%}
+          <a href="{{ coauthor_url }}">
+            {{- author.first }}
+            {{ author_last_html -}}
+          </a>
+        {%- else -%}
+          {{ author.first }}
+          {{ author_last_html }}
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+
+    {%- assign proceedings = 'inproceedings,incollection' | split: ',' -%}
+    {%- if entry.type == 'article' -%}
+      {%- capture venue_name %}<em>{{ entry.journal }}</em>{% endcapture -%}
+    {%- elsif proceedings contains entry.type -%}
+      {%- capture venue_name %}<em>{{ entry.booktitle }}</em>{% endcapture -%}
+    {%- else -%}
+      {%- capture venue_name %}<em>{{ entry.school | default: entry.publisher }}</em>{% endcapture -%}
+    {%- endif %}
+    <div class="periodical">
+      {{ venue_name }}
+      {%- if entry.year -%}
+        , {% if entry.month %}{{ entry.month | capitalize }} {% endif -%}
+        {{- entry.year -}}
+      {%- endif %}
+      {%- if entry.note %} · {{ entry.note }}{% endif %}
+    </div>
+
+    {% if entry.award_name or entry.award %}
+      <div class="award">★ {{ entry.award_name | default: 'Award' }}</div>
+    {% endif %}
+
+    <div class="links">
+      {% if entry.pdf %}
+        <a href="{% if entry.pdf contains '://' %}{{ entry.pdf }}{% else %}{{ entry.pdf | prepend: '/assets/pdf/' | relative_url }}{% endif %}"
+          >PDF</a
+        >
+      {% endif %}
+      {% if entry.arxiv %}
+        <a href="https://arxiv.org/abs/{{ entry.arxiv }}">arXiv</a>
+      {% endif %}
+      {% if entry.doi %}
+        <a href="https://doi.org/{{ entry.doi }}">DOI</a>
+      {% endif %}
+      {% if entry.html %}
+        <a href="{{ entry.html }}">HTML</a>
+      {% endif %}
+      {% if entry.code %}
+        <a href="{{ entry.code }}">Code</a>
+      {% endif %}
+      {% if entry.slides %}
+        <a href="{% if entry.slides contains '://' %}{{ entry.slides }}{% else %}{{ entry.slides | prepend: '/assets/pdf/' | relative_url }}{% endif %}"
+          >Slides</a
+        >
+      {% endif %}
+      {% if entry.poster %}
+        <a href="{% if entry.poster contains '://' %}{{ entry.poster }}{% else %}{{ entry.poster | prepend: '/assets/pdf/' | relative_url }}{% endif %}"
+          >Poster</a
+        >
+      {% endif %}
+      {% if entry.video %}
+        <a href="{{ entry.video }}">Video</a>
+      {% endif %}
+      {% if entry.website %}
+        <a href="{{ entry.website }}">Website</a>
+      {% endif %}
+      {% if entry.bibtex_show %}
+        <button type="button" onclick="this.closest('.entry').querySelector('pre.bibtex').toggleAttribute('hidden')">Bib</button>
+      {% endif %}
+    </div>
+
+    {% if entry.bibtex_show %}
+      <pre class="bibtex" hidden>{{ entry.bibtex | hideCustomBibtex | escape }}</pre>
+    {% endif %}
+  </div>
+</div>
