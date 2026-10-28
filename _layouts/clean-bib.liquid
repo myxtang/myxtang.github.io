@@ -90,8 +90,13 @@
       {% if entry.arxiv %}
         <a href="https://arxiv.org/abs/{{ entry.arxiv }}">arXiv</a>
       {% endif %}
-      {% if entry.doi %}
-        <a href="https://doi.org/{{ entry.doi }}">DOI</a>
+      {% comment %} Publisher link: an IEEE Xplore `url` if given, otherwise the DOI (IEEE DOIs are labelled IEEE Xplore). {% endcomment %}
+      {% if entry.url and entry.url contains 'ieeexplore' %}
+        <a href="{{ entry.url }}">IEEE Xplore</a>
+      {% elsif entry.doi %}
+        <a href="https://doi.org/{{ entry.doi }}">
+          {%- if entry.doi contains '10.1109/' or entry.doi contains '10.23919/' -%}IEEE Xplore{%- else -%}DOI{%- endif -%}
+        </a>
       {% endif %}
       {% if entry.html %}
         <a href="{{ entry.html }}">HTML</a>
