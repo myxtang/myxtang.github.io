@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://myxtang.github.io/sitemap.xml
+Sitemap: https://myxtang.com/sitemap.xml
