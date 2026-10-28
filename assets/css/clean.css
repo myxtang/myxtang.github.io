@@ -170,7 +170,7 @@ section.block {
 
 .about {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 220px;
+  grid-template-columns: 220px minmax(0, 1fr);
   gap: 60px;
   align-items: start;
 }
