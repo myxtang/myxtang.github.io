@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Awarded the [NSF Graduate Research Fellowship](https://www.nsfgrfp.org/).
+Awarded the [NSF Graduate Research Fellowship](https://www.nsfgrfp.org/)!
