@@ -12,10 +12,7 @@ layout: clean
     {% endif %}
   </header>
 
-  <section class="block" id="about">
-    <div class="sec-head">
-      <h2>About</h2>
-    </div>
+  <section class="block" id="about" aria-label="About">
     <div class="about">
       {% if page.profile.image %}
         {% assign profile_src = page.profile.image | prepend: '/assets/img/' %}

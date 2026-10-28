@@ -175,6 +175,10 @@ section.block {
   font: 500 0.76rem var(--mono);
 }
 
+/* the bio sits right under the name, without its own heading */
+section#about {
+  padding-top: 44px;
+}
 .about {
   display: grid;
   grid-template-columns: 220px minmax(0, 1fr);
@@ -476,6 +480,9 @@ footer {
   }
   section.block {
     padding-top: 52px;
+  }
+  section#about {
+    padding-top: 32px;
   }
   .page {
     padding-top: 40px;
