@@ -14,6 +14,7 @@
   --line: #222225;
   --line-strong: #3a3a3f;
   --accent: #58a6ff;
+  --award: #ff6b6b;
   --display: "Bricolage Grotesque", system-ui, "Segoe UI", Helvetica, Arial, sans-serif;
   --body: "Inter", system-ui, sans-serif;
   --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
@@ -27,6 +28,7 @@ html[data-theme="light"] {
   --line: #e3e5e8;
   --line-strong: #c7cbd1;
   --accent: #0a58ca;
+  --award: #c62828;
   color-scheme: light;
 }
 html {
@@ -281,8 +283,8 @@ section.block {
   margin-top: 2px;
 }
 .publications .award {
-  font: 500 0.76rem/1.5 var(--mono);
-  color: var(--accent);
+  font: 500 1.04rem/1.5 var(--mono);
+  color: var(--award);
   margin-top: 8px;
 }
 .publications .links {
