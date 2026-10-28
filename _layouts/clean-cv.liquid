@@ -10,7 +10,8 @@ layout: clean
 <main class="wrap page cv-page">
   <header class="page-head">
     <h1>{{ page.title }}</h1>
-    {% if page.cv_pdf %}
+    {% comment %} The "Download PDF" link shows only when cv.md sets both cv_pdf and show_cv_pdf: true. {% endcomment %}
+    {% if page.cv_pdf and page.show_cv_pdf %}
       <a
         class="pdf"
         {% if page.cv_pdf contains '://' %}
