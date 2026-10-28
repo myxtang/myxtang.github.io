@@ -415,17 +415,9 @@ section.block {
   color: var(--line-strong);
 }
 
-footer {
-  margin-top: 84px;
-  border-top: 1px solid var(--line);
-  padding: 26px 0 40px;
-  font: 400 0.74rem var(--mono);
-  color: var(--muted);
-}
-footer a {
-  color: inherit;
-  text-decoration: underline;
-  text-underline-offset: 3px;
+/* space below the last section (the site has no footer) */
+body > main {
+  padding-bottom: 96px;
 }
 
 @media (max-width: 760px) {
