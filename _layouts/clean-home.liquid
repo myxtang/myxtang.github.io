@@ -17,6 +17,10 @@ layout: clean
       <h2>About</h2>
     </div>
     <div class="about">
+      {% if page.profile.image %}
+        {% assign profile_src = page.profile.image | prepend: '/assets/img/' %}
+        <img src="{{ profile_src | relative_url | bust_file_cache }}" alt="Portrait of {{ site.first_name }} {{ site.last_name }}">
+      {% endif %}
       <div>
         {{ content }}
         <div class="links">
@@ -38,9 +42,6 @@ layout: clean
           <a href="{{ '/cv/' | relative_url }}">CV</a>
         </div>
       </div>
-      {% if page.profile.image %}
-        <img src="{{ page.profile.image | prepend: '/assets/img/' | relative_url }}" alt="Portrait of {{ site.first_name }} {{ site.last_name }}">
-      {% endif %}
     </div>
   </section>
 

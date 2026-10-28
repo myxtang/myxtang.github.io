@@ -9,7 +9,7 @@
     {% if entry.preview %}
       <img
         class="preview"
-        src="{{ entry.preview | prepend: '/assets/img/publication_preview/' | relative_url }}"
+        src="{{ entry.preview | prepend: '/assets/img/publication_preview/' | relative_url | bust_file_cache }}"
         alt="Figure from {{ entry.title | strip_html | escape }}"
         loading="lazy"
       >
