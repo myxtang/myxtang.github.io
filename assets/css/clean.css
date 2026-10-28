@@ -414,9 +414,12 @@ section.block {
   color: var(--line-strong);
 }
 
-/* space below the last section (the site has no footer) */
-body > main {
-  padding-bottom: 96px;
+footer {
+  margin-top: 84px;
+  border-top: 1px solid var(--line);
+  padding: 26px 0 40px;
+  font: 400 0.74rem var(--mono);
+  color: var(--muted);
 }
 
 @media (max-width: 760px) {
