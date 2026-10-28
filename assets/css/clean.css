@@ -305,6 +305,11 @@ section.block {
   color: var(--accent);
   text-decoration: none;
 }
+/* the interactive companion page gets the accent colour so it stands out from the other links */
+.publications .links a.interactive {
+  border-color: var(--accent);
+  color: var(--accent);
+}
 .publications pre.bibtex {
   margin: 12px 0 0;
   padding: 12px 14px;
