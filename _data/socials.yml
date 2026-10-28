@@ -4,7 +4,7 @@
 cv_pdf: /assets/pdf/Michael_Tang_CV.pdf # path to your CV PDF file
 email: myt001@ucsd.edu # your email address
 github_username: myxtang # your GitHub user name
-# scholar_userid: # your Google Scholar ID: the part after "user=" in your profile URL
+scholar_userid: RrnMvFsAAAAJ&hl=en # your Google Scholar ID: the part after "user=" in your profile URL
 # orcid_id: # your ORCID ID (e.g., 0000-0000-0000-0000)
 linkedin_username: michaelytang # your LinkedIn user name
 # arxiv_id: # your arXiv author ID
