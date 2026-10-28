@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-I presented "Recent Advances in the Study of Fixed-Time Stability" at the 45th Southern California Control Workshop
+Presented "Recent Advances in the Study of Fixed-Time Stability" at the 45th Southern California Control Workshop
