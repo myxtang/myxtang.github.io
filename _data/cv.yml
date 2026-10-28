@@ -22,14 +22,12 @@ cv:
       - institution: University of California, San Diego
         location: La Jolla, CA
         url: https://ucsd.edu/
-        studyType: B.S. (two degrees)
+        studyType: B.S. (double major)
         area: Electrical Engineering and Applied Mathematics
         start_date: "2019-09"
         end_date: "2023-06"
-        highlights:
-          - Cum Laude Honors
 
-    Experience:
+    Professional Experience:
       - company: Air Force Research Laboratory
         position: Graduate Student Researcher
         start_date: "2026-05"
