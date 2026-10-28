@@ -1,6 +1,5 @@
 ---
 layout: clean-home
-title: about
 permalink: /
 eyebrow: Ph.D. Student · Electrical and Computer Engineering · UC San Diego # small line under your name
 
