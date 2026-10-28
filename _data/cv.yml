@@ -33,7 +33,7 @@ cv:
         start_date: "2026-05"
         end_date: "2026-08"
 
-    Awards:
+    Selected Awards:
       - title: Best Student Paper Award
         awarder: American Control Conference
         date: "2026"
