@@ -5,8 +5,20 @@
   layout; see `bibliography_template` in _config.yml). Author matching is adapted from al-folio's bib.liquid.
 {%- endcomment -%}
 <div class="entry" id="{{ entry.key }}">
-  <div class="venue">{{ entry.abbr }}</div>
+  <div class="thumb">
+    {% if entry.preview %}
+      <img
+        class="preview"
+        src="{{ entry.preview | prepend: '/assets/img/publication_preview/' | relative_url }}"
+        alt="Figure from {{ entry.title | strip_html | escape }}"
+        loading="lazy"
+      >
+    {% endif %}
+  </div>
   <div>
+    {% if entry.abbr %}
+      <div class="venue">{{ entry.abbr }}</div>
+    {% endif %}
     <div class="title">{{ entry.title }}</div>
 
     <div class="author">
