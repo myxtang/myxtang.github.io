@@ -115,6 +115,9 @@
       {% if entry.website %}
         <a href="{{ entry.website }}">Website</a>
       {% endif %}
+      {% if entry.interactive %}
+        <a class="interactive" href="{{ entry.interactive }}">Interactive</a>
+      {% endif %}
       {% if entry.bibtex_show %}
         <button type="button" onclick="this.closest('.entry').querySelector('pre.bibtex').toggleAttribute('hidden')">Bib</button>
       {% endif %}
