@@ -1,6 +1,6 @@
 # myxtang.github.io
 
-Personal academic website of Michael Tang, live at **https://myxtang.github.io**.
+Personal academic website of Michael Tang, live at **https://myxtang.com** (custom domain set by the `CNAME` file; DNS is managed in Cloudflare).
 
 Built with the [al-folio](https://github.com/alshedivat/al-folio) Jekyll template. Every push to `main` rebuilds the site automatically (see the **Actions** tab); changes appear a few minutes later.
 
