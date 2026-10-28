@@ -14,6 +14,7 @@ Built with the [al-folio](https://github.com/alshedivat/al-folio) Jekyll templat
 | News items on the home page      | `_news/` (one small `.md` file per item; copy an existing one)      |
 | CV page                          | `_data/cv.yml`                                                      |
 | CV PDF                           | `assets/pdf/Michael_Tang_CV.pdf` (replace the file, keep the name)  |
+| Show the CV "Download PDF" link  | `_pages/cv.md` (set `show_cv_pdf: true`)                            |
 | Email, GitHub, Scholar links     | `_data/socials.yml`                                                 |
 | Name, site description, settings | `_config.yml`                                                       |
 
