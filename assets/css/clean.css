@@ -246,10 +246,10 @@ section.block {
   width: 100%;
   height: auto;
   aspect-ratio: 3 / 2;
-  object-fit: contain;
-  background: #fff;
+  object-fit: cover;
+  background: #15181d; /* matches the illustrations' card colour while loading */
   border: 1px solid var(--line);
-  border-radius: 4px;
+  border-radius: 6px;
   display: block;
 }
 .publications .venue {
