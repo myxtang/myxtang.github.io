@@ -251,10 +251,6 @@ section.block {
   border: 1px solid var(--line);
   border-radius: 4px;
   display: block;
-  filter: brightness(0.92);
-}
-html[data-theme="light"] .publications .preview {
-  filter: none;
 }
 .publications .venue {
   font: 500 0.7rem/1.4 var(--mono);
