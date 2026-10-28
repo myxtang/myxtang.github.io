@@ -22,8 +22,7 @@ cv:
       - institution: University of California, San Diego
         location: La Jolla, CA
         url: https://ucsd.edu/
-        studyType: B.S. (double major)
-        area: Electrical Engineering and Applied Mathematics
+        sub: "B.S. Electrical Engineering<br>B.S. Applied Mathematics"
         start_date: "2019-09"
         end_date: "2023-06"
 
