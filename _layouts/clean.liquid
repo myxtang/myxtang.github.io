@@ -92,6 +92,10 @@
 
     {{ content }}
 
+    <footer>
+      <div class="wrap">&copy; {{ site.time | date: '%Y' }} {{ author_name }}</div>
+    </footer>
+
     <script>
       document.getElementById('theme-toggle').addEventListener('click', function () {
         var t = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
