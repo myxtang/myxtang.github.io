@@ -16,8 +16,22 @@
     {% endif %}
   </div>
   <div>
-    {% if entry.abbr %}
-      <div class="venue">{{ entry.abbr }}</div>
+    {%- assign proceedings = 'inproceedings,incollection' | split: ',' -%}
+    {%- assign kind = '' -%}
+    {%- if entry.type == 'article' -%}
+      {%- assign kind = 'journal' -%}
+    {%- elsif proceedings contains entry.type -%}
+      {%- assign kind = 'conference' -%}
+    {%- endif %}
+    {% if kind != '' or entry.abbr %}
+      <div class="venue">
+        {% if kind != '' -%}
+          <span class="kind {{ kind }}">{{ kind }}</span>
+        {%- endif %}
+        {% if entry.abbr -%}
+          <span class="abbr">{{ entry.abbr }}</span>
+        {%- endif %}
+      </div>
     {% endif %}
     <div class="title">{{ entry.title }}</div>
 
@@ -60,7 +74,6 @@
       {%- endfor -%}
     </div>
 
-    {%- assign proceedings = 'inproceedings,incollection' | split: ',' -%}
     {%- if entry.type == 'article' -%}
       {%- capture venue_name %}<em>{{ entry.journal }}</em>{% endcapture -%}
     {%- elsif proceedings contains entry.type -%}

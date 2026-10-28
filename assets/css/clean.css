@@ -16,6 +16,8 @@
   --line-strong: #3a3a3f;
   --accent: #58a6ff;
   --award: #ff6b6b;
+  --journal: #c29bff;
+  --conference: #4fcf8f;
   --display: "Bricolage Grotesque", system-ui, "Segoe UI", Helvetica, Arial, sans-serif;
   --body: "Inter", system-ui, sans-serif;
   --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
@@ -30,6 +32,8 @@ html[data-theme="light"] {
   --line-strong: #c7cbd1;
   --accent: #0a58ca;
   --award: #c62828;
+  --journal: #7a45d6;
+  --conference: #157a45;
   color-scheme: light;
 }
 html {
@@ -255,10 +259,30 @@ section.block {
   display: block;
 }
 .publications .venue {
+  display: flex;
+  align-items: center;
+  gap: 9px;
   font: 500 0.7rem/1.4 var(--mono);
   letter-spacing: 0.08em;
   color: var(--muted);
-  margin-bottom: 4px;
+  margin-bottom: 6px;
+}
+/* journal / conference tag: a tinted label, squarer than the rounded link buttons so it doesn't read as clickable */
+.publications .kind {
+  --k: var(--muted);
+  font: 500 0.62rem/1 var(--mono);
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--k);
+  background: color-mix(in srgb, var(--k) 14%, transparent);
+  border-radius: 4px;
+  padding: 4px 7px;
+}
+.publications .kind.journal {
+  --k: var(--journal);
+}
+.publications .kind.conference {
+  --k: var(--conference);
 }
 .publications .title {
   font: 600 1.04rem/1.38 var(--body);
