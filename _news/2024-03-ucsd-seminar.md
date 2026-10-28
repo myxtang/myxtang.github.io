@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-I presented "Deceptive Nash Equilibrium Seeking" at a UCSD controls and optimization seminar
+Presented "Deceptive Nash Equilibrium Seeking" at a UCSD controls and optimization seminar
