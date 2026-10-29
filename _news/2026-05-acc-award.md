@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-I received the **Best Student Paper Award** at the 2026 American Control Conference!
+I received the <a href="https://a2c2.org/paper-award/acc-best-student-paper-award#recipients" style="color: inherit"><strong>Best Student Paper Award</strong></a> at the 2026 American Control Conference!
