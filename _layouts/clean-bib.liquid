@@ -3,36 +3,43 @@
 {%- comment -%}
   One publication on the publications and home pages (jekyll-scholar renders each entry through this
   layout; see `bibliography_template` in _config.yml). Author matching is adapted from al-folio's bib.liquid.
+
+  A page that sets `compact_pubs: true` (the publications page) gets the compact form: no thumbnail and no
+  journal/conference tag above the title. The thumbnails stay in assets/img/publication_preview/.
 {%- endcomment -%}
-<div class="entry" id="{{ entry.key }}">
-  <div class="thumb">
-    {% if entry.preview %}
-      <img
-        class="preview"
-        src="{{ entry.preview | prepend: '/assets/img/publication_preview/' | relative_url | bust_file_cache }}"
-        alt="Figure from {{ entry.title | strip_html | escape }}"
-        loading="lazy"
-      >
-    {% endif %}
-  </div>
+{%- assign proceedings = 'inproceedings,incollection,conference' | split: ',' -%}
+<div class="entry{% if page.compact_pubs %} compact{% endif %}" id="{{ entry.key }}">
+  {% unless page.compact_pubs %}
+    <div class="thumb">
+      {% if entry.preview %}
+        <img
+          class="preview"
+          src="{{ entry.preview | prepend: '/assets/img/publication_preview/' | relative_url | bust_file_cache }}"
+          alt="Figure from {{ entry.title | strip_html | escape }}"
+          loading="lazy"
+        >
+      {% endif %}
+    </div>
+  {% endunless %}
   <div>
-    {%- assign proceedings = 'inproceedings,incollection' | split: ',' -%}
     {%- assign kind = '' -%}
     {%- if entry.type == 'article' -%}
       {%- assign kind = 'journal' -%}
     {%- elsif proceedings contains entry.type -%}
       {%- assign kind = 'conference' -%}
     {%- endif %}
-    {% if kind != '' or entry.abbr %}
-      <div class="venue">
-        {% if kind != '' -%}
-          <span class="kind {{ kind }}">{{ kind }}</span>
-        {%- endif %}
-        {% if entry.abbr -%}
-          <span class="abbr">{{ entry.abbr }}</span>
-        {%- endif %}
-      </div>
-    {% endif %}
+    {% unless page.compact_pubs %}
+      {% if kind != '' or entry.abbr %}
+        <div class="venue">
+          {% if kind != '' -%}
+            <span class="kind {{ kind }}">{{ kind }}</span>
+          {%- endif %}
+          {% if entry.abbr -%}
+            <span class="abbr">{{ entry.abbr }}</span>
+          {%- endif %}
+        </div>
+      {% endif %}
+    {% endunless %}
     <div class="title">{{ entry.title }}</div>
 
     <div class="author">
@@ -74,20 +81,27 @@
       {%- endfor -%}
     </div>
 
+    {%- comment -%} Submitted papers and preprints (@unpublished, @misc) may give a journal, a note, or neither. {%- endcomment -%}
     {%- if entry.type == 'article' -%}
-      {%- capture venue_name %}<em>{{ entry.journal }}</em>{% endcapture -%}
+      {%- assign venue = entry.journal -%}
     {%- elsif proceedings contains entry.type -%}
-      {%- capture venue_name %}<em>{{ entry.booktitle }}</em>{% endcapture -%}
+      {%- assign venue = entry.booktitle -%}
     {%- else -%}
-      {%- capture venue_name %}<em>{{ entry.school | default: entry.publisher }}</em>{% endcapture -%}
+      {%- assign venue = entry.journal | default: entry.booktitle | default: entry.howpublished | default: entry.school | default: entry.publisher -%}
     {%- endif %}
     <div class="periodical">
-      {{ venue_name }}
+      {%- if venue -%}
+        <em>{{ venue }}</em>
+      {%- endif -%}
       {%- if entry.year -%}
-        , {% if entry.month %}{{ entry.month | capitalize }} {% endif -%}
+        {%- if venue %}, {% endif -%}
+        {%- if entry.month %}{{ entry.month | capitalize }} {% endif -%}
         {{- entry.year -}}
-      {%- endif %}
-      {%- if entry.note %} · {{ entry.note }}{% endif %}
+      {%- endif -%}
+      {%- if entry.note -%}
+        {%- if venue or entry.year %} · {% endif -%}
+        {{- entry.note -}}
+      {%- endif -%}
     </div>
 
     {% if entry.award_name or entry.award %}

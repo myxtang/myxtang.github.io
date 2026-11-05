@@ -356,6 +356,51 @@ section#about {
   display: none;
 }
 
+/* compact list on the publications page (compact_pubs: true): journal, conference and submitted sections,
+   numbered from the bottom like a CV ([J4] ... [J1]); the counter starts in _pages/publications.md */
+.publications.compact .pub-sec + .pub-sec {
+  margin-top: 46px;
+}
+.publications.compact .pub-sec h2 {
+  font-size: 1.36rem;
+  line-height: 1.2;
+  margin: 0 0 12px;
+}
+.pub-sec.journal {
+  --tag: "[J";
+}
+.pub-sec.conference {
+  --tag: "[C";
+}
+.pub-sec.preprint {
+  --tag: "[S";
+}
+.publications.compact ol.bibliography > li {
+  display: grid;
+  grid-template-columns: 2.9rem minmax(0, 1fr);
+  column-gap: 12px;
+  padding: 15px 0;
+}
+.publications.compact ol.bibliography > li::before {
+  counter-increment: pub -1;
+  content: var(--tag) counter(pub) "]";
+  font: 500 0.74rem/1.435rem var(--mono);
+  color: var(--muted);
+}
+.publications .entry.compact {
+  display: block;
+}
+.publications .entry.compact .title {
+  margin-bottom: 4px;
+}
+.publications .entry.compact .award {
+  font-size: 0.88rem;
+  margin-top: 5px;
+}
+.publications .entry.compact .links {
+  margin-top: 9px;
+}
+
 /* inner pages */
 .page {
   padding-top: 56px;
@@ -477,6 +522,10 @@ footer {
   .publications .entry {
     grid-template-columns: 104px minmax(0, 1fr);
     gap: 14px;
+  }
+  .publications.compact ol.bibliography > li {
+    grid-template-columns: 2.5rem minmax(0, 1fr);
+    column-gap: 8px;
   }
   section.block {
     padding-top: 52px;

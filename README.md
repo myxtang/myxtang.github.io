@@ -11,6 +11,7 @@ Built with the [al-folio](https://github.com/alshedivat/al-folio) Jekyll templat
 | Bio, photo caption, home page    | `_pages/about.md`                                                   |
 | Photo                            | `assets/img/prof_pic.jpg` (replace the file, keep the name)         |
 | Publications                     | `_bibliography/papers.bib` (add `selected = {true}` to feature one) |
+| Submitted papers and preprints   | `_bibliography/papers.bib` as `@unpublished` (or `@misc`) entries   |
 | News items on the home page      | `_news/` (one small `.md` file per item; copy an existing one)      |
 | CV page                          | `_data/cv.yml`                                                      |
 | CV PDF                           | `assets/pdf/Michael_Tang_CV.pdf` (replace the file, keep the name)  |
