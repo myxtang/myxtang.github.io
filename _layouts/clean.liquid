@@ -108,5 +108,7 @@
         } catch (e) {}
       });
     </script>
+    {% comment %} Analytics from _config.yml (analytics: cloudflare / google / ...); renders nothing until an ID is set. {% endcomment %}
+    {% al_analytics_scripts %}
   </body>
 </html>
